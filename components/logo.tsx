@@ -1,4 +1,3 @@
-"use client";
 import LogoIcon from "@/public/svgs/LogoIcon";
 import Link from "next/link";
 

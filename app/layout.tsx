@@ -62,11 +62,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className="min-h-screen max-w-6xl mx-auto bg-background">
-            <TextProvider>{children}</TextProvider>
-            <Toaster />
-          </main>
+          <div className="app-wrapper min-h-screen">
+            <Header />
+            <main className="max-w-6xl mx-auto bg-background">
+              <TextProvider>{children}</TextProvider>
+              <Toaster />
+            </main>
+          </div>
           <Footer />
         </ThemeProvider>
       </body>

@@ -28,7 +28,7 @@ interface PreviewDialogProps {
   setText: (text: string) => void;
 }
 
-export function PreviewDialog({
+export default function PreviewDialog({
   open,
   onOpenChange,
   text,

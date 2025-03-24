@@ -2,12 +2,12 @@
 import Upload from "./upload";
 import Actions from "./actions";
 import Options from "./options";
+import PreviewDialog from "@/pages/home/components/previewDialog";
 import { useState } from "react";
 import { useText } from "@/hooks/useText";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { PreviewDialog } from "@/pages/home/components/previewDialog";
 import { Eye } from "lucide-react";
 
 export default function HomeClient() {

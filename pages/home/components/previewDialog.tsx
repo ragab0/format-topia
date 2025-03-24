@@ -1,5 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
+import rehypeRaw from "rehype-raw";
+import ActionToJson from "./actionToJson";
 import { useState } from "react";
 import { Textarea } from "../../../components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -41,11 +43,16 @@ export function PreviewDialog({
       return (
         <ReactJson
           src={formatted}
-          theme={resolvedTheme === "dark" ? "tomorrow" : "rjv-default"}
+          theme={resolvedTheme === "dark" ? "google" : "rjv-default"}
         />
       );
     } catch {
-      return <div className="text-destructive">Invalid JSON</div>;
+      return (
+        <div>
+          <p className="text-destructive text-center mb-2">Invalid JSON, </p>
+          <ActionToJson />
+        </div>
+      );
     }
   }
 
@@ -61,7 +68,7 @@ export function PreviewDialog({
             <TabsTrigger value="markdown">Markdown</TabsTrigger>
             <TabsTrigger value="json">JSON</TabsTrigger>
           </TabsList>
-          <div className="preview-body grid grid-cols-2 gap-2 h-full">
+          <div className="preview-body grid sm:grid-cols-2 gap-2 h-full">
             <Textarea
               placeholder="Enter or paste your text here..."
               className="min-h-full resize-y"
@@ -69,10 +76,12 @@ export function PreviewDialog({
               onChange={(e) => setText(e.target.value)}
               id="inputField"
             />
-            <div className="preview-view overflow-auto">
+            <div className="preview-view overflow-auto rounded-md grid">
               <TabsContent value="markdown">
                 <div className="preview-markdown">
-                  <ReactMarkdown>{text}</ReactMarkdown>
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                    {text}
+                  </ReactMarkdown>
                 </div>
               </TabsContent>
               <TabsContent value="json">

@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Format-Topia
 
-## Getting Started
+A powerful web-based text formatting tool designed to make text transformation quick and easy.
 
-First, run the development server:
+## 📝 Bio
+
+Format-Topia is a modern web application that provides a comprehensive suite of text formatting and transformation tools. Built with a clean, intuitive interface, it allows users to quickly convert text cases, trim spaces, preview markdown, transform text to JSON, and more. Whether you're a developer cleaning up text data, a writer formatting content, or anyone who works with text, Format-Topia streamlines the process with just a few clicks.
+
+## 🚀 Features
+
+- **Text Case Conversion**: Easily transform text to UPPERCASE or lowercase
+- **Space Trimming**: Remove extra spaces from your text
+- **Markdown Conversion & Preview**: Convert to Markdown and preview the rendered output
+- **JSON Parsing & Preview**: Transform your text to properly formatted JSON
+- **File Upload**: Upload text files directly for formatting
+- **Word & Character Count**: Track the number of words and characters in real-time
+- **Dark/Light Theme**: Switch between dark and light modes for comfortable viewing
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+## 🛠️ Tech Stack
+
+- **UI Libraries & Frameworks**: React 19 & Next.js 15 with App Router & Shadcn/ui
+- **Styling**: Tailwind CSS 4 with Typography plugin
+- **State Management**: React Context API
+- **Markdown Processing**: Marked and React Markdown with rehype-raw (for handling HTML tags)
+- **Json Viewer**: React JSON viewer
+- **Notifications**: Sonner for toast notifications
+- **File Handling (download & upload)**: React Dropzone for file uploads, File-Saver for downloads
+- **Theme Switching**: Next-themes for dark/light mode
+- **Development**: TypeScript, ESLint, Prettier
+
+## 📦 Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/ragab0/format-topia.git
+
+# Navigate to the project directory
+cd format-topia
+
+# Install dependencies
+npm install --legacy-peer-deps
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `npm run dev` - Starts the development server with Turbopack
+- `npm run build` - Builds the application for production
+- `npm run start` - Starts the production server
+- `npm run lint` - Runs ESLint to check for code quality issues
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+format-topia/
+├── app/                  # Next.js App Router files
+├── components/           # Reusable UI components
+├── hooks/                # Custom React hooks
+│   └── useText.ts        # Hook for text state management
+├── lib/                  # Utility functions and shared logic
+├── pages/                # Page components
+│   └── home/             # Home page components
+│       ├── components/   # Home-specific components
+│       │   ├── actions.tsx    # Text formatting actions
+│       │   ├── homeClient.tsx # Client-side home interface
+│       │   ├── options.tsx    # Additional options
+│       │   └── upload.tsx     # File upload component
+│       └── homePage.tsx  # Main home page
+├── providers/            # Context providers
+│   └── textContext.tsx   # Text state context provider
+├── public/               # Static assets
+├── types/                # TypeScript type definitions
+├── .vscode/              # VS Code configuration
+├── next.config.ts        # Next.js configuration
+├── package.json          # Project dependencies and scripts
+├── tailwind.config.js    # Tailwind CSS configuration
+└── tsconfig.json         # TypeScript configuration
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🔮 Coming Soon
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Zustand for State Management**: Moving from Context API to Zustand for more efficient state management
+- **Unit Tests**: Comprehensive test coverage with Jest and React Testing Library
+- **Text History**: Track and restore previous versions of your text
+- **Local Storage**: Save your work automatically between sessions
+- **Keyboard Shortcuts**: Improve workflow efficiency with keyboard shortcuts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2025 Format-Topia. Made with ❤️ by <ins>**[Ragab Eid](https://ragab.vercel.app/)**</ins>

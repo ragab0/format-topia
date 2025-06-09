@@ -4,10 +4,10 @@ import { Button } from "../../../components/ui/button";
 import { toast } from "sonner";
 import { saveAs } from "file-saver";
 import { Copy, FileJson, FileText, FileCode } from "lucide-react";
-import { useText } from "@/hooks/useText";
+import { useTextStore } from "@/stores/useTextStore";
 
 export default function Options() {
-  const { text } = useText();
+  const { text } = useTextStore();
 
   function handleCopy() {
     navigator.clipboard.writeText(text);

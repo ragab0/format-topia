@@ -1,6 +1,12 @@
-export interface TextContextType {
+export interface TextStore {
   text: string;
-  setText: (text: string) => void;
   wordCount: number;
   characterCount: number;
+  setText: (newText: string) => void;
+  toUpperCase: () => void;
+  toLowerCase: () => void;
+  trimSpaces: () => void;
+  clear: () => void;
+  toJson: () => void;
+  toMarkdown: () => Promise<void>;
 }

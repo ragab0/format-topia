@@ -4,14 +4,14 @@ import Actions from "./actions";
 import Options from "./options";
 import PreviewDialog from "@/pages/home/components/previewDialog";
 import { useState } from "react";
-import { useText } from "@/hooks/useText";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Eye } from "lucide-react";
+import { useTextStore } from "@/stores/useTextStore";
 
 export default function HomeClient() {
-  const { text, setText, wordCount, characterCount } = useText();
+  const { text, setText, wordCount, characterCount } = useTextStore();
   const [previewOpen, setPreviewOpen] = useState(false);
 
   return (

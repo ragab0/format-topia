@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/providers/themeProvider";
-import { TextProvider } from "@/providers/textContext";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
@@ -65,7 +64,7 @@ export default function RootLayout({
           <div className="app-wrapper min-h-screen">
             <Header />
             <main className="max-w-6xl mx-auto bg-background">
-              <TextProvider>{children}</TextProvider>
+              {children}
               <Toaster />
             </main>
           </div>

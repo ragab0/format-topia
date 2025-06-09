@@ -1,12 +1,12 @@
 "use client";
-import { useText } from "@/hooks/useText";
+import { useTextStore } from "@/stores/useTextStore";
 import { FileUp } from "lucide-react";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { toast } from "sonner";
 
 export default function Upload() {
-  const { setText } = useText();
+  const { setText } = useTextStore();
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
